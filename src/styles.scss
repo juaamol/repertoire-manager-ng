@@ -1,15 +1,21 @@
 :root {
   /* Dark Mode */
   --ebony-bg: #0f0f12;
-  --ebony-text: #e0e0e0;
+  --ebony-text: #f4f4f4;
   --ebony-header: #ffffff;
   --ebony-accent: #c5a059;
+  --ebony-error: #af4c4c;
+  --ebony-warn: #c98b39;
+  --ebony-success: #6b8e23;
 
   /* Light Mode */
   --parchment-bg: #c9c4b9;
   --parchment-text: #45423d;
   --parchment-header: #2d2b28;
-  --parchment-accent: #8b4513; 
+  --parchment-accent: #673512;
+  --parchment-error: #800000;
+  --parchment-warn: #a0522d;
+  --parchment-success: #3e4d3e;
 }
 
 body {
@@ -55,61 +61,72 @@ h2 {
 }
 
 .divider {
-  height: 2px;
-  width: 60px;
+  height: 1px;
+  width: 120px;
   margin: 2rem auto;
 }
 
 /* --- DARK THEME --- */
 .theme-ebony {
   background-color: var(--ebony-bg);
-  color: #f4f4f4;
+  color: var(--ebony-text);
   font-family: 'Georgia', serif;
 
   h1 {
     font-style: italic;
+    color: var(--ebony-header);
   }
-  
+
   .divider {
-    background-color: #f4f4f4;
-    height: 1px;
-    width: 120px;
-    margin: 2rem auto;
+    background-color: var(--ebony-text);
   }
 
   .test-button {
-    background: #f4f4f4;
+    background-color: var(--ebony-accent);
+    color: var(--ebony-bg);
     border: none;
-    color: #0f0f12;
     padding: 1rem 2rem;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  .text-error {
+    color: var(--ebony-error);
+  }
+  .text-warn {
+    color: var(--ebony-warn);
   }
 }
 
 /* --- LIGHT THEME --- */
 .theme-parchment {
   background-color: var(--parchment-bg);
-  color: #45423d;
+  color: var(--parchment-text);
   font-family: 'Georgia', serif;
   position: relative;
   overflow: hidden;
 
   h1 {
-    color: #2d2b28;
+    color: var(--parchment-header);
   }
 
   .divider {
     background-color: #ada799;
-    height: 1px;
-    width: 120px;
-    margin: 2rem auto;
   }
 
   .test-button {
-    background-color: #45423d;
-    color: #c9c4b9;
+    background-color: var(--parchment-accent);
+    color: var(--parchment-bg);
     border: none;
     padding: 1rem 2rem;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  .text-error {
+    color: var(--parchment-error);
+  }
+  .text-warn {
+    color: var(--parchment-warn);
   }
 }
