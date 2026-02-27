@@ -1,8 +1,3 @@
-$henle-blue: #5d7a8c;
-$schirmer-yellow: #f1e4bc;
-$paper: #fdfcf8;
-$text-dark: #1a1a1a;
-$text-gray: #636e72;
 $line-color: #4d4d4d;
 
 $pentagram-spacing: 30px;
@@ -10,105 +5,11 @@ $pentagram-line-width: 2px;
 $optional-tree-height: 200px;
 
 $tree-margin: calc($pentagram-spacing + $pentagram-line-width);
-$bullet-width: 24px;
 
 .tree {
-  min-height: $optional-tree-height;
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.tree > .tree-list {
-  flex: 1;
-}
-
-.tree-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.results-container {
-  margin-left: calc(calc($tree-margin - $bullet-width) / 2);
-}
-
-.tree-list .tree-list {
-  margin-left: $tree-margin;
-}
-
-.tree-node {
-  position: relative;
-  margin: 0;
-}
-
-.node-row {
-  display: flex;
-  align-items: center;
-  padding: 6px 0 6px 0;
-  cursor: pointer;
-  position: relative;
-}
-
-.note-icon {
-  width: $bullet-width;
-  height: 20px;
-  display: flex;
-  color: $text-dark;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(90deg);
-  overflow: hidden;
-}
-
-.note-icon > span {
-  font-size: 3.2rem;
-  padding-bottom: 2rem;
-}
-
-.note-accent {
-  width: 32px;
-  height: 16px;
-  display: flex;
-  justify-content: center;
-  color: $text-dark;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.note-accent > span {
-  font-size: 2.5rem;
-  padding-top: 1.2rem;
-}
-
-.node-text {
-  font-size: 1rem;
-  color: $text-dark;
-  font-style: italic;
-  transition: color 0.2s;
-  background-color: $paper;
-}
-
-.node-row:hover .node-text {
-  color: $henle-blue;
-}
-
-.matched {
-  background-color: $schirmer-yellow;
-  padding: 2px 4px;
-  border-radius: 1px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.node-meta {
-  font-size: 0.7rem;
-  color: $text-gray;
-  margin-left: auto;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .pentagram {
@@ -134,7 +35,7 @@ $bullet-width: 24px;
 .double-bar-line {
   margin: 0 calc($pentagram-spacing / 2);
   width: calc(calc($tree-margin * 4) + $pentagram-line-width);
-  margin-top: 4px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -154,16 +55,8 @@ $bullet-width: 24px;
   width: calc(calc($tree-margin * 4) + $pentagram-line-width);
 }
 
-.clef.c-clef {
-  height: calc($tree-margin * 4 * 18 / 25);
-}
-
 .clef.g-clef {
   height: calc($tree-margin * 4 * 15.186 / 40.768);
-}
-
-.clef.f-clef {
-  height: calc($tree-margin * 4 * 18 / 20);
 }
 
 .clef-svg {
@@ -173,7 +66,7 @@ $bullet-width: 24px;
 }
 
 .search-group {
-  margin-top: 16px;
+  margin-top: 12px;
   z-index: 1;
 }
 
@@ -182,39 +75,9 @@ $bullet-width: 24px;
   border: 1px solid $line-color;
   border-radius: 4px;
   font-size: 1rem;
-  font-family: 'Georgia', sans-serif;
-}
-
-/* SEARCH INTERACTIONS */
-.search-input.invalid {
-  border: 1px solid #c0392b !important;
-  background-color: #faf2ee;
-  outline: none;
-}
-
-.search-input.valid {
-  border: 1px solid #27ae60 !important;
-  background-color: #f5faf8;
-  outline: none;
 }
 
 .search-input {
   width: 100%;
   box-sizing: border-box;
-}
-
-.results-container {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-
-.results-container.expanded {
-  height: 100px;
-  transition: height 0.3s ease;
-}
-
-.results-container.big {
-  height: 250px;
-  transition: height 0.3s ease;
 }

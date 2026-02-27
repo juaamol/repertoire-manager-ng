@@ -22,10 +22,20 @@
   --parchment-success: #3e4d3e;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Georgia', serif;
+
+  input {
+    font-family: 'Georgia', serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .container {
@@ -37,12 +47,16 @@ html, body {
 .piece-cover {
   border-left: 1rem solid var(--parchment-success);
   height: 100%;
-  padding-left: 3rem;
-  padding-top: 3rem;
+  padding: 3rem;
 }
 
 .content {
   max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -67,7 +81,6 @@ h2 {
 .theme-ebony {
   background-color: var(--ebony-bg);
   color: var(--ebony-text);
-  font-family: 'Georgia', serif;
 
   h1 {
     font-style: italic;
