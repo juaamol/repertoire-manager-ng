@@ -3,3 +3,9 @@
 <section class="searchbar">
   <app-clef-input></app-clef-input>
 </section>
+
+<section class="shelf-container">
+  @for (book of books; track book.title) {
+    <app-book [title]="book.title" [composer]="book.composer"></app-book>
+  }
+</section>

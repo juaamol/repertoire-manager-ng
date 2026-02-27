@@ -9,3 +9,17 @@
     width: 50%;
   }
 }
+
+.shelf-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (min-width: 600px) {
+  .shelf-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
