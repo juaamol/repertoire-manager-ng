@@ -3,7 +3,9 @@
   --ebony-bg: #0f0f12;
   --ebony-text: #f4f4f4;
   --ebony-header: #ffffff;
-  --ebony-accent: #c5a059;
+  --ebony-primary: #c5a059;
+  --ebony-secondary: #8e9196;
+  --ebony-sec-cont: #2a2c31;
   --ebony-error: #af4c4c;
   --ebony-warn: #c98b39;
   --ebony-success: #6b8e23;
@@ -12,7 +14,9 @@
   --parchment-bg: #c9c4b9;
   --parchment-text: #45423d;
   --parchment-header: #2d2b28;
-  --parchment-accent: #673512;
+  --parchment-primary: #8b4513;
+  --parchment-secondary: #5d6066;
+  --parchment-sec-cont: #b7b2a7;
   --parchment-error: #800000;
   --parchment-warn: #a0522d;
   --parchment-success: #3e4d3e;
@@ -81,13 +85,20 @@ h2 {
     background-color: var(--ebony-text);
   }
 
-  .test-button {
-    background-color: var(--ebony-accent);
+  .btn-primary {
+    background-color: var(--ebony-primary);
     color: var(--ebony-bg);
+
     border: none;
     padding: 1rem 2rem;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .chip {
+    background-color: var(--ebony-sec-cont);
+    color: var(--ebony-secondary);
+    border: 1px solid var(--ebony-secondary);
   }
 
   .text-error {
@@ -114,13 +125,20 @@ h2 {
     background-color: #ada799;
   }
 
-  .test-button {
-    background-color: var(--parchment-accent);
+  .btn-primary {
+    background-color: var(--parchment-primary);
     color: var(--parchment-bg);
+
     border: none;
     padding: 1rem 2rem;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .chip {
+    background-color: var(--parchment-sec-cont);
+    color: var(--parchment-text);
+    border: 1px solid var(--parchment-secondary);
   }
 
   .text-error {
