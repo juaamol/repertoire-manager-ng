@@ -22,38 +22,31 @@
   --parchment-success: #3e4d3e;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
+.container {
+  height: 100%;
+  padding: 1rem;
+}
+
 /* RESET & BASE */
-.test-container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0;
-  transition: all 0.5s ease;
+.piece-cover {
+  border-left: 1rem solid var(--parchment-success);
+  height: 100%;
+  padding-left: 3rem;
+  padding-top: 3rem;
 }
 
 .content {
   max-width: 600px;
 }
 
-h1 {
-  font-size: 5rem;
-  margin: 0;
-  line-height: 1;
-}
-
 h2 {
   font-weight: 300;
-  font-size: 1.5rem;
-  letter-spacing: 4px;
   text-transform: uppercase;
 }
 
