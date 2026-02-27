@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Dark Mode */
+  --ebony-bg: #0f0f12;
+  --ebony-text: #e0e0e0;
+  --ebony-header: #ffffff;
+  --ebony-accent: #c5a059;
+
+  /* Light Mode */
+  --parchment-bg: #c9c4b9;
+  --parchment-text: #45423d;
+  --parchment-header: #2d2b28;
+  --parchment-accent: #8b4513; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* RESET & BASE */
+.test-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+.content {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  line-height: 1;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.label {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.divider {
+  height: 2px;
+  width: 60px;
+  margin: 2rem auto;
+}
+
+/* --- DARK THEME --- */
+.theme-ebony {
+  background-color: var(--ebony-bg);
+  color: #f4f4f4;
+  font-family: 'Georgia', serif;
+
+  h1 {
+    font-style: italic;
+  }
+  
+  .divider {
+    background-color: #f4f4f4;
+    height: 1px;
+    width: 120px;
+    margin: 2rem auto;
+  }
+
+  .test-button {
+    background: #f4f4f4;
+    border: none;
+    color: #0f0f12;
+    padding: 1rem 2rem;
+    font-weight: bold;
+  }
+}
+
+/* --- LIGHT THEME --- */
+.theme-parchment {
+  background-color: var(--parchment-bg);
+  color: #45423d;
+  font-family: 'Georgia', serif;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    color: #2d2b28;
+  }
+
+  .divider {
+    background-color: #ada799;
+    height: 1px;
+    width: 120px;
+    margin: 2rem auto;
+  }
+
+  .test-button {
+    background-color: #45423d;
+    color: #c9c4b9;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+  }
+}
