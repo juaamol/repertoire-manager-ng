@@ -5,7 +5,5 @@
 </section>
 
 <section class="shelf-container">
-  @for (book of books; track book.title) {
-    <app-book [title]="book.title" [composer]="book.composer"></app-book>
-  }
+  @for (book of books; track book.title) {}
 </section>
