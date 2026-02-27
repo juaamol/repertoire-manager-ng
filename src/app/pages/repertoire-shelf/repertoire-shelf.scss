@@ -1,7 +1,11 @@
+section {
+  margin-top: 2rem;
+}
+
 .searchbar {
-  padding: 2rem;
   width: 100%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
