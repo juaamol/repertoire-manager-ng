@@ -47,9 +47,18 @@ body {
   background: url('./assets/violin.svg') no-repeat top right scroll;
 }
 
+@media (min-width: 768px) {
+  .container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('./assets/violin.svg') no-repeat top right scroll;
+    transform: scaleX(-1);
+  }
+}
+
 /* RESET & BASE */
 .piece-cover {
-  border-left: 1rem solid var(--parchment-success);
   height: 100%;
   padding: 1rem 3rem;
 }
@@ -60,6 +69,7 @@ body {
 
 h1 {
   text-align: center;
+  font-style: italic;
   font-size: 2.5rem;
   margin-top: 0;
 }
