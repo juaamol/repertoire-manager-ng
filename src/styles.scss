@@ -44,8 +44,7 @@ body {
 .container {
   height: 100%;
   padding: 1rem;
-  background: url('./assets/violin.svg') no-repeat top right fixed;
-  background-size: cover;
+  background: url('./assets/violin.svg') no-repeat top right scroll;
 }
 
 /* RESET & BASE */
