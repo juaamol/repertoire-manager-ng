@@ -1,28 +1,29 @@
 :root {
-  /* Dark Mode */
-  --ebony-bg: #0f0f12;
-  --ebony-text: #f4f4f4;
-  --ebony-header: #ffffff;
-  --ebony-primary: #c5a059;
-  --ebony-secondary: #8e9196;
-  --ebony-sec-cont: #2a2c31;
-  --ebony-error: #af4c4c;
-  --ebony-warn: #c98b39;
-  --ebony-success: #6b8e23;
-
-  /* Light Mode */
-  --parchment-bg: #c9c4b9;
-  --parchment-text: #45423d;
-  --parchment-header: #2d2b28;
-  --parchment-primary: #8b4513;
-  --parchment-secondary: #5d6066;
-  --parchment-sec-cont: #b7b2a7;
-  --parchment-error: #800000;
-  --parchment-warn: #a0522d;
-  --parchment-success: #7ca38a;
-
-  /* Other */
   --paper: #fdfcf8;
+}
+
+.theme-ebony {
+  --bg: #0f0f12;
+  --text: #f4f4f4;
+  --header: #ffffff;
+  --primary: #c5a059;
+  --secondary: #8e9196;
+  --sec-cont: #2a2c31;
+  --error: #af4c4c;
+  --warn: #c98b39;
+  --success: #6b8e23;
+}
+
+.theme-parchment {
+  --bg: #c9c4b9;
+  --text: #45423d;
+  --header: #2d2b28;
+  --primary: #8b4513;
+  --secondary: #5d6066;
+  --sec-cont: #b7b2a7;
+  --error: #800000;
+  --warn: #a0522d;
+  --success: #7ca38a;
 }
 
 html,
@@ -92,23 +93,23 @@ h2 {
   margin: 2rem auto;
 }
 
-/* --- DARK THEME --- */
-.theme-ebony {
-  background-color: var(--ebony-bg);
-  color: var(--ebony-text);
+.theme-ebony,
+.theme-parchment {
+  background-color: var(--bg);
+  color: var(--text);
 
   h1 {
     font-style: italic;
-    color: var(--ebony-header);
+    color: var(--header);
   }
 
   .divider {
-    background-color: var(--ebony-text);
+    background-color: var(--text);
   }
 
   .btn-primary {
-    background-color: var(--ebony-primary);
-    color: var(--ebony-bg);
+    background-color: var(--primary);
+    color: var(--bg);
 
     border: none;
     padding: 1rem 2rem;
@@ -117,55 +118,15 @@ h2 {
   }
 
   .chip {
-    background-color: var(--ebony-sec-cont);
-    color: var(--ebony-secondary);
-    border: 1px solid var(--ebony-secondary);
+    background-color: var(--sec-cont);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
   }
 
   .text-error {
-    color: var(--ebony-error);
+    color: var(--error);
   }
   .text-warn {
-    color: var(--ebony-warn);
-  }
-}
-
-/* --- LIGHT THEME --- */
-.theme-parchment {
-  background-color: var(--parchment-bg);
-  color: var(--parchment-text);
-  font-family: 'Georgia', serif;
-  position: relative;
-  overflow: hidden;
-
-  h1 {
-    color: var(--parchment-header);
-  }
-
-  .divider {
-    background-color: #ada799;
-  }
-
-  .btn-primary {
-    background-color: var(--parchment-primary);
-    color: var(--parchment-bg);
-
-    border: none;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .chip {
-    background-color: var(--parchment-sec-cont);
-    color: var(--parchment-text);
-    border: 1px solid var(--parchment-secondary);
-  }
-
-  .text-error {
-    color: var(--parchment-error);
-  }
-  .text-warn {
-    color: var(--parchment-warn);
+    color: var(--warn);
   }
 }
