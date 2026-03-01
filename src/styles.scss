@@ -45,7 +45,7 @@ body {
 .container {
   height: 100%;
   padding: 1rem;
-  background: url('./assets/violin.svg') no-repeat top right scroll;
+  background: url('./assets/violin-empty.svg') no-repeat top right scroll;
 }
 
 @media (min-width: 768px) {
@@ -53,7 +53,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('./assets/violin.svg') no-repeat top right scroll;
+    background: url('./assets/violin-empty.svg') no-repeat top right scroll;
     transform: scaleX(-1);
   }
 }
