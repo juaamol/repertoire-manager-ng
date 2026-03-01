@@ -16,7 +16,7 @@ export class RepertoireShelf {
       cover: 'assets/bach-sonatas.jpg',
     },
     {
-      title: 'Violin Concertos',
+      title: 'Violin Concertos Violin Concertos Violin Concertos',
       composer: 'Wolfgang Amadeus Mozart',
       cover: 'assets/mozart-concertos.jpg',
     },
