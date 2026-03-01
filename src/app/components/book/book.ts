@@ -10,4 +10,5 @@ import { StringToColorPipe } from '../../pipes/string-to-color-pipe';
 export class Book {
   title = input('Untitled');
   composer = input('Unknown');
+  classification = input('');
 }

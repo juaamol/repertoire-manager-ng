@@ -14,6 +14,7 @@ export class RepertoireShelf {
       title: 'Sonatas and Partitas',
       composer: 'Johann Sebastian Bach',
       cover: 'assets/bach-sonatas.jpg',
+      classification: 'Adagio sostenuto — A haunting, nocturnal atmosphere defined by triplets.',
     },
     {
       title: 'Violin Concertos Violin Concertos Violin Concertos',
@@ -24,6 +25,7 @@ export class RepertoireShelf {
       title: 'Violin Sonata No. 9',
       composer: 'Ludwig van Beethoven',
       cover: 'assets/beethoven-sonata.jpg',
+      classification: 'Adagio sostenuto — A haunting, nocturnal atmosphere defined by triplets.',
     },
     {
       title: 'Violin Concerto',
@@ -31,7 +33,12 @@ export class RepertoireShelf {
       cover: 'assets/tchaikovsky-concerto.jpg',
     },
     { title: 'Caprices', composer: 'Niccolò Paganini', cover: 'assets/paganini-caprices.jpg' },
-    { title: 'The Four Seasons', composer: 'Antonio Vivaldi', cover: 'assets/vivaldi-seasons.jpg' },
+    {
+      title: 'The Four Seasons',
+      composer: 'Antonio Vivaldi',
+      cover: 'assets/vivaldi-seasons.jpg',
+      classification: 'Adagio sostenuto — A haunting, nocturnal atmosphere defined by triplets.',
+    },
     { title: 'Violin Concerto', composer: 'Jean Sibelius', cover: 'assets/sibelius-concerto.jpg' },
     {
       title: 'Violin Concerto',

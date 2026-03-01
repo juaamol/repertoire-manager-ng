@@ -6,6 +6,10 @@
 
 <section class="shelf-container">
   @for (book of books; track book.title) {
-    <app-book [title]="book.title" [composer]="book.composer"></app-book>
+    <app-book
+      [title]="book.title"
+      [composer]="book.composer"
+      [classification]="book.classification || ''"
+    ></app-book>
   }
 </section>

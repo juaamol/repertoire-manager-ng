@@ -19,67 +19,79 @@
   transform: scale(1.02);
 }
 
-.composer {
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-size: 0.7rem;
-  color: var(--text);
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .composer {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    color: var(--book-border-color);
+    font-weight: bold;
+  }
+
+  .title {
+    margin: 0 0 0 0;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: var(--text);
+    font-weight: normal;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .classification {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .title,
+  .classification {
+    /* Limits long quotes to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
-.title,
-.excerpt {
-  /* Limits long quotes to 2 lines */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.title {
-  margin: 12% 0 2% 0;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  color: var(--text);
-  font-weight: normal;
-}
-
-.subtitle {
-  font-size: 0.9rem;
-  color: var(--text-gray);
-}
-
-.excerpt {
-  font-size: 0.75rem;
-  font-style: italic;
-  color: var(--text-gray);
-  line-height: 1.3;
-  padding: 0 5px;
-  margin-bottom: 10px;
-}
-
-.footer-info {
+footer {
+  border-top: 1px solid var(--border);
   margin-top: auto;
   width: 100%;
-}
 
-.instrument-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--text-gray);
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  padding-top: 6px;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-
-.progress {
-  display: flex;
-  justify-content: space-around;
-
-  .icons-row {
+  .instruments {
+    margin: 8px 0 4px 0;
     display: flex;
+    gap: 0.25rem;
     justify-content: center;
-    gap: 2px;
+
+    .instrument {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .progress {
+    display: flex;
+    justify-content: space-between;
+
+    .icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+    }
   }
 }

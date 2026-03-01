@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'stringToColor',
+  pure: true,
 })
 export class StringToColorPipe implements PipeTransform {
   transform(str: string): string {
@@ -13,7 +14,7 @@ export class StringToColorPipe implements PipeTransform {
 
     const h = Math.abs(hash) % 360;
     const s = 30;
-    const l = 55;
+    const l = 42;
 
     return `hsl(${h}, ${s}%, ${l}%)`;
   }

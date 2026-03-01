@@ -5,25 +5,25 @@
 .theme-ebony {
   --bg: #0f0f12;
   --text: #f4f4f4;
-  --header: #ffffff;
   --primary: #c5a059;
   --secondary: #8e9196;
   --sec-cont: #2a2c31;
   --error: #af4c4c;
   --warn: #c98b39;
   --success: #6b8e23;
+  --border: var(--text);
 }
 
 .theme-parchment {
   --bg: #c9c4b9;
   --text: #45423d;
-  --header: #2d2b28;
   --primary: #8b4513;
   --secondary: #5d6066;
   --sec-cont: #b7b2a7;
   --error: #800000;
   --warn: #a0522d;
   --success: #7ca38a;
+  --border: var(--text);
 }
 
 html,
@@ -45,7 +45,6 @@ h1 {
   text-align: center;
   font-style: italic;
   font-size: 2.5rem;
-  margin-top: 0;
 }
 
 h2 {
@@ -73,7 +72,7 @@ h2 {
 
   h1 {
     font-style: italic;
-    color: var(--header);
+    color: var(--text);
   }
 
   .divider {

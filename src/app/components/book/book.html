@@ -1,9 +1,18 @@
 <div class="score-card" [style.--book-border-color]="composer() | stringToColor">
-  <div class="composer">{{ composer() }}</div>
-  <h2 class="title">{{ title() }}</h2>
-  <div class="subtitle">Op. 27, No. 2</div>
-  <div class="footer-info">
-    <div class="instrument-label">Piano</div>
+  <main>
+    <div class="composer">{{ composer() }}</div>
+    <div>
+      <h2 class="title">{{ title() }}</h2>
+      <div class="subtitle">Op. 27, No. 2</div>
+    </div>
+    @if (classification(); as classification) {
+      <p class="classification">"{{ classification }}"</p>
+    }
+  </main>
+  <footer>
+    <div class="instruments">
+      <span class="instrument">Piano</span>
+    </div>
     <div class="progress">
       <div class="icons-row">
         <span class="icon-note">&#119135;</span>
@@ -20,5 +29,5 @@
         <span class="icon-metronome">&#10710;</span>
       </div>
     </div>
-  </div>
+  </footer>
 </div>
