@@ -32,7 +32,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: 'Georgia', serif;
 
   input {
@@ -45,24 +44,27 @@ body {
 }
 
 .theme-container {
-  height: 100%;
   padding: 1rem;
 }
 
 .piece-cover {
-  height: 100%;
+  min-height: calc(100dvh - 2rem);
   padding: 1rem 3rem;
   border: double $cover-border-size var(--text);
-  background: url('./assets/violin-empty.svg') no-repeat top right scroll;
+  background: url('./assets/violin-empty-left.svg') no-repeat top right scroll;
 }
 
-@media (min-width: 768px) {
-  .piece-cover::before {
-    content: '';
-    position: absolute;
-    inset: calc(1rem + $cover-border-size);
-    background: url('./assets/violin-empty.svg') no-repeat top right scroll;
-    transform: scaleX(-1);
+@media (min-width: 1024px) {
+  .piece-cover {
+    min-height: calc(100dvh - 2rem);
+    padding: 1rem 3rem;
+    border: double $cover-border-size var(--text);
+    background-image: url('./assets/violin-empty-left.svg'), url('./assets/violin-empty-right.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: scroll, scroll;
+    background-position:
+      top right,
+      top left;
   }
 }
 
