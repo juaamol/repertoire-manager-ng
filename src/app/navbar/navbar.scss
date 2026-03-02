@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  button {
+    border: solid 2px var(--border);
+    background-color: var(--bg);
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+
+    &.login {
+      background-color: var(--paper);
+      text-transform: uppercase;
+    }
+  }
+}

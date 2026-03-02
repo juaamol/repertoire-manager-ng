@@ -9,7 +9,7 @@ main {
 
     .piece-cover {
       min-height: calc(100dvh - 2 * ($page-padding + $cover-border-size));
-      padding: 1rem 3rem;
+      padding: 1rem;
       background: url('../assets/violin-empty-left.svg') no-repeat top right fixed;
     }
   }
