@@ -1,5 +1,3 @@
-$line-color: #4d4d4d;
-
 $pentagram-spacing: 30px;
 $pentagram-line-width: 2px;
 $optional-tree-height: 200px;
@@ -28,7 +26,7 @@ $tree-margin: calc($pentagram-spacing + $pentagram-line-width);
 }
 
 .pentagram > li:nth-child(odd) {
-  background: $line-color;
+  background: var(--border);
   width: $pentagram-line-width;
 }
 
@@ -42,7 +40,7 @@ $tree-margin: calc($pentagram-spacing + $pentagram-line-width);
 }
 
 .double-bar-line > * {
-  background-color: $line-color;
+  background-color: var(--border);
   height: 4px;
 }
 
@@ -62,7 +60,7 @@ $tree-margin: calc($pentagram-spacing + $pentagram-line-width);
 .clef-svg {
   width: 100%;
   height: 100%;
-  color: $line-color;
+  color: var(--border);
 }
 
 .search-group {
@@ -72,7 +70,7 @@ $tree-margin: calc($pentagram-spacing + $pentagram-line-width);
 
 .search-input {
   padding: 8px 12px;
-  border: 1px solid $line-color;
+  border: 1px solid var(--border);
   border-radius: 4px;
   font-size: 1rem;
 }
