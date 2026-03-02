@@ -1,23 +1,24 @@
 $cover-border-size: 12px;
+$page-padding: 1rem;
 
 main {
-  padding: 1rem;
-}
+  padding: $page-padding;
 
-.piece-cover {
-  min-height: calc(100dvh - 2rem);
-  padding: 1rem 3rem;
-  border: double $cover-border-size var(--border);
-  background: url('../assets/violin-empty-left.svg') no-repeat top right scroll;
+  .piece-border {
+    border: double $cover-border-size var(--border);
+
+    .piece-cover {
+      min-height: calc(100dvh - 2 * ($page-padding + $cover-border-size));
+      padding: 1rem 3rem;
+      background: url('../assets/violin-empty-left.svg') no-repeat top right fixed;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
-  .piece-cover {
-    min-height: calc(100dvh - 2rem);
-    padding: 1rem 3rem;
-    border: double $cover-border-size var(--border);
+  main .piece-border .piece-cover {
     background:
-      url('../assets/violin-empty-left.svg') no-repeat top right scroll,
-      url('../assets/violin-empty-right.svg') no-repeat top left scroll;
+      url('../assets/violin-empty-left.svg') no-repeat top right fixed,
+      url('../assets/violin-empty-right.svg') no-repeat top left fixed;
   }
 }
