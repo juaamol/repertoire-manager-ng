@@ -1,81 +1,70 @@
-$pentagram-spacing: 30px;
+$pentagram-spacing: 36px;
 $pentagram-line-width: 2px;
-$optional-tree-height: 200px;
-
-$tree-margin: calc($pentagram-spacing + $pentagram-line-width);
 
 .tree {
-  position: relative;
   display: flex;
+  gap: 2px;
+}
+
+.search {
+  display: flex;
+  flex: 1;
   flex-direction: column;
-}
-
-.pentagram {
-  position: absolute;
-  list-style: none;
-  padding-left: 0;
-  left: calc($pentagram-spacing / 2);
-  display: flex;
-  margin: 0;
-  height: 100%;
-  opacity: 0.5;
-}
-
-.pentagram > li {
-  width: $pentagram-spacing;
-}
-
-.pentagram > li:nth-child(odd) {
-  background: var(--border);
-  width: $pentagram-line-width;
+  justify-content: center;
 }
 
 .double-bar-line {
-  margin: 0 calc($pentagram-spacing / 2);
-  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
-  margin-top: 8px;
+  height: calc($pentagram-spacing * 4 + $pentagram-line-width);
   display: flex;
-  flex-direction: column;
   gap: 4px;
-}
 
-.double-bar-line > * {
-  background-color: var(--border);
-  height: 4px;
-}
+  & > * {
+    background-color: var(--border);
+    width: 4px;
+  }
 
-.double-bar-line > *:nth-child(2) {
-  height: 8px;
+  & > *:nth-child(2) {
+    width: 8px;
+  }
 }
 
 .clef {
-  margin: 0 calc($pentagram-spacing / 2);
-  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
+  grid-area: clef;
+  height: calc($pentagram-spacing * 4 + $pentagram-line-width);
+
+  .clef-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--border);
+  }
 }
 
-.clef.g-clef {
-  height: calc($tree-margin * 4 * 15.186 / 40.768);
+.pentagram-line {
+  pointer-events: none;
+  border-top: $pentagram-line-width solid var(--border);
 }
 
-.clef-svg {
-  width: 100%;
-  height: 100%;
-  color: var(--border);
-}
-
-.search-group {
-  margin-top: 8px;
-  z-index: 1;
-}
-
-.search-input {
+input {
   padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
+  border: none;
+  border-top: $pentagram-line-width solid var(--border);
+  background-color: transparent;
   font-size: 1rem;
+
+  &:focus {
+    outline: none;
+    background-color: var(--paper);
+  }
+
+  &::placeholder {
+    color: var(--text);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-style: italic;
+  }
 }
 
-.search-input {
-  width: 100%;
-  box-sizing: border-box;
+.pentagram-line,
+input {
+  height: $pentagram-spacing;
 }
