@@ -8,6 +8,7 @@ nav {
     background-color: var(--bg);
     padding: 0.5rem 1rem;
     letter-spacing: 1px;
+    cursor: pointer;
 
     &.login {
       background-color: var(--paper);
