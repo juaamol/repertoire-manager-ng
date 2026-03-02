@@ -1,7 +1,7 @@
 $pentagram-spacing: 36px;
 $pentagram-line-width: 2px;
 
-.tree {
+.content {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -63,16 +63,27 @@ input {
     outline: none;
     background-color: var(--paper);
   }
-
-  &::placeholder {
-    color: var(--text);
-    font-weight: bold;
-    font-family: sans-serif;
-    font-style: italic;
-  }
 }
 
 .pentagram-line,
 input {
   height: $pentagram-spacing;
+  width: 100%;
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  border: solid 2px var(--border);
+  background-color: var(--paper);
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  button {
+    width: unset;
+  }
 }
