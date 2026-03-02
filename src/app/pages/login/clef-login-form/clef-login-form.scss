@@ -1,0 +1,83 @@
+$line-color: #4d4d4d;
+
+$pentagram-spacing: 30px;
+$pentagram-line-width: 2px;
+$optional-tree-height: 200px;
+
+$tree-margin: calc($pentagram-spacing + $pentagram-line-width);
+
+.tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pentagram {
+  position: absolute;
+  list-style: none;
+  padding-left: 0;
+  left: calc($pentagram-spacing / 2);
+  display: flex;
+  margin: 0;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.pentagram > li {
+  width: $pentagram-spacing;
+}
+
+.pentagram > li:nth-child(odd) {
+  background: $line-color;
+  width: $pentagram-line-width;
+}
+
+.double-bar-line {
+  margin: 0 calc($pentagram-spacing / 2);
+  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.double-bar-line > * {
+  background-color: $line-color;
+  height: 4px;
+}
+
+.double-bar-line > *:nth-child(2) {
+  height: 8px;
+}
+
+.clef {
+  margin: 0 calc($pentagram-spacing / 2);
+  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
+}
+
+.clef.g-clef {
+  height: calc($tree-margin * 4 * 15.186 / 40.768);
+}
+
+.clef-svg {
+  width: 100%;
+  height: 100%;
+  color: $line-color;
+}
+
+.search-group {
+  margin-top: 8px;
+  z-index: 1;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid $line-color;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+}
