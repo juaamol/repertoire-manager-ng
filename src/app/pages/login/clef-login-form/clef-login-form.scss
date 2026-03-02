@@ -31,6 +31,7 @@ $pentagram-line-width: 2px;
 .clef {
   grid-area: clef;
   height: calc($pentagram-spacing * 4 + $pentagram-line-width);
+  min-width: calc(($pentagram-spacing * 4 + $pentagram-line-width) * 15.186 / 40.768);
 
   .clef-svg {
     width: 100%;
