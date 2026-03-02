@@ -3,6 +3,7 @@ $pentagram-line-width: 2px;
 
 .tree {
   display: flex;
+  align-items: center;
   gap: 2px;
 }
 
@@ -29,9 +30,10 @@ $pentagram-line-width: 2px;
 }
 
 .clef {
-  grid-area: clef;
-  height: calc($pentagram-spacing * 4 + $pentagram-line-width);
-  min-width: calc(($pentagram-spacing * 4 + $pentagram-line-width) * 15.186 / 40.768);
+  $height: calc($pentagram-spacing * 6 + $pentagram-line-width);
+  $svg-proportion: calc(15.186 / 40.768);
+  height: $height;
+  min-width: calc($height * $svg-proportion);
 
   .clef-svg {
     width: 100%;
@@ -43,6 +45,11 @@ $pentagram-line-width: 2px;
 .pentagram-line {
   pointer-events: none;
   border-top: $pentagram-line-width solid var(--border);
+
+  &:last-child {
+    height: $pentagram-line-width + $pentagram-spacing;
+    border-bottom: $pentagram-line-width solid var(--border);
+  }
 }
 
 input {
