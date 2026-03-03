@@ -85,6 +85,7 @@ $input-padding-x: 12px;
     transform: translateY(-50%);
     transition: all 0.2s ease-in-out;
     color: var(--text);
+    pointer-events: none;
     letter-spacing: 1px;
     font-family: sans-serif;
     font-weight: bold;
