@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-clef-input',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './clef-input.html',
   styleUrl: './clef-input.scss',
 })
-export class ClefInput {}
+export class ClefInput {
+  name = input('');
+  type = input('text');
+  label = input('');
+}

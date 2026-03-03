@@ -1,81 +1,93 @@
-$pentagram-spacing: 30px;
+$pentagram-spacing: 17px;
 $pentagram-line-width: 2px;
-$optional-tree-height: 200px;
+$input-padding-x: 12px;
 
-$tree-margin: calc($pentagram-spacing + $pentagram-line-width);
-
-.tree {
-  position: relative;
+.field {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 6px;
 }
 
 .pentagram {
-  position: absolute;
   list-style: none;
-  padding-left: 0;
-  left: calc($pentagram-spacing / 2);
-  display: flex;
+  padding: 0;
   margin: 0;
-  height: 100%;
-  opacity: 0.5;
-}
+  position: absolute;
+  width: 100%;
 
-.pentagram > li {
-  width: $pentagram-spacing;
-}
+  .pentagram-line {
+    height: $pentagram-line-width;
+    background-color: var(--border);
+  }
 
-.pentagram > li:nth-child(odd) {
-  background: var(--border);
-  width: $pentagram-line-width;
+  .pentagram-space {
+    height: $pentagram-spacing;
+  }
 }
 
 .double-bar-line {
-  margin: 0 calc($pentagram-spacing / 2);
-  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
-  margin-top: 8px;
+  height: calc(($pentagram-spacing + $pentagram-line-width) * 4);
   display: flex;
-  flex-direction: column;
   gap: 4px;
-}
 
-.double-bar-line > * {
-  background-color: var(--border);
-  height: 4px;
-}
+  & > * {
+    background-color: var(--border);
+    width: 4px;
+  }
 
-.double-bar-line > *:nth-child(2) {
-  height: 8px;
+  & > *:nth-child(2) {
+    width: 8px;
+  }
 }
 
 .clef {
-  margin: 0 calc($pentagram-spacing / 2);
-  width: calc(calc($tree-margin * 4) + $pentagram-line-width);
+  $height: calc(($pentagram-spacing + $pentagram-line-width) * 6);
+  $svg-proportion: calc(15.186 / 40.768);
+  height: $height;
+  min-width: calc($height * $svg-proportion);
+
+  .clef-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--border);
+  }
 }
 
-.clef.g-clef {
-  height: calc($tree-margin * 4 * 15.186 / 40.768);
-}
+.input-container {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  border-left: solid 2px var(--border);
+  border-right: solid 2px var(--border);
 
-.clef-svg {
-  width: 100%;
-  height: 100%;
-  color: var(--border);
-}
+  input {
+    padding: 8px $input-padding-x;
+    border: none;
+    font-size: 1rem;
+    height: $pentagram-spacing * 2 + $pentagram-line-width;
+    width: 100%;
 
-.search-group {
-  margin-top: 8px;
-  z-index: 1;
-}
+    &:focus + .floating-label,
+    &:not(:placeholder-shown) + .floating-label {
+      top: -($pentagram-spacing + $pentagram-line-width);
+      font-size: 0.8rem;
+      color: var(--border);
+      transform: translateY(0);
+    }
+  }
 
-.search-input {
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.search-input {
-  width: 100%;
-  box-sizing: border-box;
+  .floating-label {
+    position: absolute;
+    left: $input-padding-x;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+    color: var(--text);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+  }
 }
