@@ -28,8 +28,6 @@ All views are implemented as standalone components and styled with SCSS.
   - `pages/` – top‑level views (login, repertoire-shelf, work-search)
   - `pipes/` – utility transformations (e.g. string‑to‑color)
 
-This structure illustrates best practices for scalable Angular applications.
-
 ---
 
 ## 🚀 Getting Started
@@ -48,8 +46,6 @@ This structure illustrates best practices for scalable Angular applications.
    ng build --prod
    ```
    Artifacts will be in the `dist/` directory.
-
-> The server will reload automatically when source files change.
 
 ---
 

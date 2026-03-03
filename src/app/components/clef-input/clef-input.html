@@ -33,7 +33,6 @@
       [type]="type()"
       [value]="value()"
       [class.error]="touched() && invalid()"
-      [class.success]="touched() && !invalid()"
       (input)="value.set($event.target.value)"
       (blur)="touched.set(true)"
       class="search-input"
