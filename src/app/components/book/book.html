@@ -10,9 +10,11 @@
     }
   </main>
   <footer>
-    <div class="instruments">
-      <span class="instrument">Piano</span>
-    </div>
+    <ul class="instrumentations">
+      @for (instrumentation of instrumentations(); track instrumentation) {
+        <li class="instrumentation">{{ instrumentation }}</li>
+      }
+    </ul>
     <div class="progress">
       <div class="icons-row">
         <span class="icon-note">&#119135;</span>

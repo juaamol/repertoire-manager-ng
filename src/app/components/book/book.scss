@@ -68,13 +68,15 @@ footer {
   margin-top: auto;
   width: 100%;
 
-  .instruments {
+  .instrumentations {
     margin: 8px 0 4px 0;
+    border: 0;
+    list-style: none;
     display: flex;
     gap: 0.25rem;
     justify-content: center;
 
-    .instrument {
+    .instrumentation {
       font-size: 0.7rem;
       text-transform: uppercase;
       border: 1px solid var(--border);

@@ -11,4 +11,5 @@ export class Book {
   title = input('Untitled');
   composer = input('Unknown');
   classification = input('');
+  instrumentations = input<string[]>([]);
 }
