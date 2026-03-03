@@ -1,6 +1,7 @@
 $pentagram-spacing: 17px;
 $pentagram-line-width: 2px;
 $input-padding-x: 12px;
+$small-text: 0.8rem;
 
 .field {
   display: flex;
@@ -56,9 +57,10 @@ $input-padding-x: 12px;
 
 .input-container {
   position: relative;
+  height: $pentagram-spacing * 2 + $pentagram-line-width;
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   border-left: solid 2px var(--border);
   border-right: solid 2px var(--border);
 
@@ -72,9 +74,13 @@ $input-padding-x: 12px;
     &:focus + .floating-label,
     &:not(:placeholder-shown) + .floating-label {
       top: -($pentagram-spacing + $pentagram-line-width);
-      font-size: 0.8rem;
+      font-size: $small-text;
       color: var(--border);
       transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: none;
     }
   }
 
@@ -90,5 +96,20 @@ $input-padding-x: 12px;
     font-family: sans-serif;
     font-weight: bold;
     font-style: italic;
+  }
+
+  .error-messages {
+    position: absolute;
+    margin: 0;
+    top: ($pentagram-spacing + $pentagram-line-width) * 2;
+
+    .error {
+      height: $pentagram-spacing + $pentagram-line-width;
+      font-size: $small-text;
+      font-style: italic;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: var(--error);
+    }
   }
 }

@@ -20,9 +20,9 @@
   --primary: #8b4513;
   --secondary: #5d6066;
   --sec-cont: #b7b2a7;
-  --error: #800000;
+  --error: #b91c1c;
   --warn: #a0522d;
-  --success: #7ca38a;
+  --success: #15803d;
   --border: var(--text);
 }
 
@@ -94,7 +94,16 @@ h2 {
   .text-error {
     color: var(--error);
   }
+
   .text-warn {
     color: var(--warn);
+  }
+
+  input.error {
+    outline: solid 2px var(--error);
+  }
+
+  input.success {
+    outline: solid 2px var(--success);
   }
 }

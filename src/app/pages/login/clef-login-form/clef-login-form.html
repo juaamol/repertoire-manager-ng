@@ -1,6 +1,16 @@
-<form>
-  <app-clef-input name="username" type="text" label="Username"></app-clef-input>
-  <app-clef-input name="password" type="password" label="Password"></app-clef-input>
+<form (submit)="onSubmit($event)">
+  <app-clef-input
+    id="username"
+    type="email"
+    label="Email"
+    [formField]="loginForm.email"
+  ></app-clef-input>
+  <app-clef-input
+    id="password"
+    type="password"
+    label="Password"
+    [formField]="loginForm.password"
+  ></app-clef-input>
 
-  <button>LOGIN</button>
+  <button type="submit">LOGIN</button>
 </form>
