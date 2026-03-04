@@ -2,7 +2,12 @@
 
 $input-padding-x: 12px;
 
-.pentagram {
+:host {
+  position: relative;
+  width: 100%;
+  border-left: solid 2px var(--border);
+  border-right: solid 2px var(--border);
+
   &:has(input:focus) .floating-label,
   &:has(input:not(:placeholder-shown)) .floating-label {
     top: -($pentagram-spacing + $pentagram-line-width);
@@ -51,9 +56,5 @@ input {
     font-family: sans-serif;
     font-weight: bold;
     color: var(--error);
-
-    &::marker {
-      font-style: normal;
-    }
   }
 }

@@ -3,27 +3,54 @@
 <form (submit)="onSubmit($event)">
   <div class="creation">
     <div class="inputs">
-      <app-clef-input
-        id="work-search-instrumentation"
-        label="Instrumentation"
-        [formField]="searchForm.instrumentation"
-      ></app-clef-input>
-      <app-clef-input
-        id="work-search-composer"
-        label="Composer"
-        [formField]="searchForm.composer"
-      ></app-clef-input>
-      <app-clef-input
-        id="work-search-work"
-        label="Work"
-        [formField]="searchForm.title"
-      ></app-clef-input>
+      <app-pentagram>
+        <app-clef-input
+          id="work-search-instrumentation"
+          label="Instrumentation"
+          class="clef-input"
+          [formField]="searchForm.instrumentation"
+        ></app-clef-input>
+      </app-pentagram>
+
+      <app-pentagram>
+        <app-clef-input
+          id="work-search-composer"
+          label="Composer"
+          class="clef-input"
+          [formField]="searchForm.composer"
+        ></app-clef-input>
+        <app-section-divider></app-section-divider>
+        <app-clef-input
+          id="work-search-work"
+          label="Work"
+          class="clef-input"
+          [formField]="searchForm.title"
+        ></app-clef-input>
+      </app-pentagram>
+
+      <app-pentagram>
+        <app-clef-input
+          id="work-search-difficulty"
+          label="Difficulty"
+          class="clef-input"
+          [formField]="searchForm.difficulty"
+        ></app-clef-input>
+        <app-section-divider></app-section-divider>
+        <app-clef-input
+          id="work-search-status"
+          label="status"
+          class="clef-input"
+          [formField]="searchForm.status"
+        ></app-clef-input>
+      </app-pentagram>
     </div>
     <app-book
       class="book"
       [title]="searchForm.title().value()"
       [composer]="searchForm.composer().value()"
       [instrumentations]="instrumentations()"
+      [difficulty]="searchForm.difficulty().value()"
+      [status]="searchForm.status().value()"
     ></app-book>
   </div>
   <button>CREATE</button>

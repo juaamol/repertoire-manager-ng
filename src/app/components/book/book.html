@@ -17,18 +17,14 @@
     </ul>
     <div class="progress">
       <div class="icons-row">
-        <span class="icon-note">&#119135;</span>
-        <span class="icon-note">&#119135;</span>
-        <span class="icon-note">&#119135;</span>
-        <span class="icon-note">&#119134;</span>
-        <span class="icon-note">&#119134;</span>
+        @for (_ of range; track $index) {
+          <span class="icon-note">{{ $index < difficulty() ? '&#119135;' : '&#119134;' }}</span>
+        }
       </div>
       <div class="icons-row">
-        <span class="icon-metronome">&#10711;</span>
-        <span class="icon-metronome">&#10711;</span>
-        <span class="icon-metronome">&#10711;</span>
-        <span class="icon-metronome">&#10710;</span>
-        <span class="icon-metronome">&#10710;</span>
+        @for (_ of range; track $index) {
+          <span class="icon-note">{{ $index < status() ? '&#10711;' : '&#10710;' }}</span>
+        }
       </div>
     </div>
   </footer>

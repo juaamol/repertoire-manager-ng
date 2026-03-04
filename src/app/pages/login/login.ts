@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormField, form, required, email, minLength, pattern } from '@angular/forms/signals';
-import { ClefInput } from '../../components/clef-input/clef-input';
+import { ClefInput } from '../../components/forms/clef-input/clef-input';
+import { Pentagram } from '../../components/forms/pentagram/pentagram';
 
 interface LoginData {
   email: string;
@@ -9,7 +10,7 @@ interface LoginData {
 
 @Component({
   selector: 'app-login',
-  imports: [ClefInput, FormField],
+  imports: [ClefInput, FormField, Pentagram],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })

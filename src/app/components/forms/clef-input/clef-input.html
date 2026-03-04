@@ -1,0 +1,19 @@
+<label class="floating-label" [for]="id()">{{ label() }}</label>
+<input
+  [id]="id()"
+  [type]="type()"
+  [value]="value()"
+  [class.error]="touched() && invalid()"
+  (input)="value.set($event.target.value)"
+  (blur)="touched.set(true)"
+  placeholder=""
+  autocomplete="off"
+/>
+
+@if (touched() && invalid()) {
+  <ul class="error-messages" role="alert">
+    @for (error of errors().slice(0, 2); track error) {
+      <li class="error">{{ error.message }}</li>
+    }
+  </ul>
+}

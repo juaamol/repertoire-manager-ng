@@ -1,0 +1,8 @@
+@use 'index' as pentagram;
+
+:host {
+  width: pentagram.$pentagram-line-width;
+  height: (pentagram.$pentagram-line-width + pentagram.$pentagram-spacing) * 4;
+  background: var(--border);
+  margin: 0 8px;
+}

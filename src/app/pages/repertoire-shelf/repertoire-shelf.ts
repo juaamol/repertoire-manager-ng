@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ClefInput } from '../../components/clef-input/clef-input';
+import { ClefInput } from '../../components/forms/clef-input/clef-input';
 import { Book } from '../../components/book/book';
 import { PageTitle } from '../../page-title/page-title';
+import { Pentagram } from '../../components/forms/pentagram/pentagram';
 
 @Component({
   selector: 'app-repertoire-shelf',
-  imports: [ClefInput, Book, PageTitle],
+  imports: [ClefInput, Book, PageTitle, Pentagram],
   templateUrl: './repertoire-shelf.html',
   styleUrl: './repertoire-shelf.scss',
 })
