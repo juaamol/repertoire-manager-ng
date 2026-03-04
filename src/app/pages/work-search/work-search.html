@@ -4,42 +4,42 @@
   <div class="creation">
     <div class="inputs">
       <app-pentagram>
-        <app-clef-input
+        <app-input
           id="work-search-instrumentation"
           label="Instrumentation"
-          class="clef-input"
+          class="input"
           [formField]="searchForm.instrumentation"
-        ></app-clef-input>
+        ></app-input>
       </app-pentagram>
 
       <app-pentagram>
-        <app-clef-input
+        <app-input
           id="work-search-composer"
           label="Composer"
-          class="clef-input"
+          class="input"
           [formField]="searchForm.composer"
-        ></app-clef-input>
+        ></app-input>
         <app-section-divider></app-section-divider>
-        <app-clef-input
+        <app-input
           id="work-search-work"
           label="Work"
-          class="clef-input"
+          class="input"
           [formField]="searchForm.title"
-        ></app-clef-input>
+        ></app-input>
       </app-pentagram>
 
       <app-pentagram>
-        <app-clef-input
+        <app-input
           id="work-search-difficulty"
           label="Difficulty (0-10)"
-          class="clef-input"
+          class="input"
           [formField]="searchForm.difficulty"
-        ></app-clef-input>
+        ></app-input>
         <app-section-divider></app-section-divider>
         <app-select-dropdown
           id="work-search-status"
           label="status"
-          class="clef-input"
+          class="input"
           [formField]="searchForm.status"
           [options]="pieceStatus"
         ></app-select-dropdown>

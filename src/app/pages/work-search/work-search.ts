@@ -1,6 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
 import { PageTitle } from '../../components/page-title/page-title';
-import { ClefInput } from '../../components/forms/clef-input/clef-input';
+import { Input } from '../../components/forms/input/input';
 import { form, FormField, required } from '@angular/forms/signals';
 import { Book } from '../../components/book/book';
 import { Pentagram } from '../../components/forms/pentagram/pentagram';
@@ -18,7 +18,7 @@ interface WorkSearchForm {
 
 @Component({
   selector: 'app-work-search',
-  imports: [PageTitle, ClefInput, FormField, Book, Pentagram, SectionDivider, SelectDropdown],
+  imports: [PageTitle, Input, FormField, Book, Pentagram, SectionDivider, SelectDropdown],
   templateUrl: './work-search.html',
   styleUrl: './work-search.scss',
 })

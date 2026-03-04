@@ -1,20 +1,15 @@
 <form (submit)="onSubmit($event)">
   <app-pentagram>
-    <app-clef-input
-      id="username"
-      type="email"
-      label="Email"
-      [formField]="loginForm.email"
-    ></app-clef-input>
+    <app-input id="username" type="email" label="Email" [formField]="loginForm.email"></app-input>
   </app-pentagram>
 
   <app-pentagram>
-    <app-clef-input
+    <app-input
       id="password"
       type="password"
       label="Password"
       [formField]="loginForm.password"
-    ></app-clef-input>
+    ></app-input>
   </app-pentagram>
 
   <button type="submit">LOGIN</button>

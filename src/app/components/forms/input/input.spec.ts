@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClefInput } from './clef-input';
+import { Input } from './input';
 
 describe('ClefInput', () => {
-  let component: ClefInput;
-  let fixture: ComponentFixture<ClefInput>;
+  let component: Input;
+  let fixture: ComponentFixture<Input>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClefInput],
+      imports: [Input],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ClefInput);
+    fixture = TestBed.createComponent(Input);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

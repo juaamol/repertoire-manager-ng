@@ -2,12 +2,12 @@ import { Component, input, model } from '@angular/core';
 import { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 
 @Component({
-  selector: 'app-clef-input',
+  selector: 'app-input',
   imports: [],
-  templateUrl: './clef-input.html',
-  styleUrl: './clef-input.scss',
+  templateUrl: './input.html',
+  styleUrl: './input.scss',
 })
-export class ClefInput implements FormValueControl<string | number> {
+export class Input implements FormValueControl<string | number> {
   value = model<string | number>('');
   id = input('');
   type = input<'email' | 'text' | 'password'>('text');
