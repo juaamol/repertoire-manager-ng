@@ -15,7 +15,7 @@ form {
     }
 
     .book {
-      flex: 0;
+      height: calc(19px * 16);
     }
   }
 
@@ -26,14 +26,13 @@ form {
 
 @media (min-width: 768px) {
   form {
-    width: 100%;
-
     .creation {
       flex-direction: row;
     }
 
     .book {
-      height: calc(19px * 16);
+      width: unset;
+      flex: 0;
     }
   }
 }
