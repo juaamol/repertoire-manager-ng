@@ -4,11 +4,12 @@
   [id]="id()"
   [type]="type()"
   [value]="value()"
+  [min]="min()"
+  [max]="max()"
   [class.error]="touched() && invalid()"
   (input)="value.set($event.target.value)"
   (blur)="touched.set(true)"
   placeholder=" "
-  autocomplete="off"
 />
 
 @if (touched() && invalid()) {

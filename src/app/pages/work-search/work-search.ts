@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { PageTitle } from '../../components/page-title/page-title';
 import { Input } from '../../components/forms/input/input';
-import { form, FormField, required } from '@angular/forms/signals';
+import { form, FormField, max, min, required } from '@angular/forms/signals';
 import { Book } from '../../components/book/book';
 import { Pentagram } from '../../components/forms/pentagram/pentagram';
 import { SectionDivider } from '../../components/forms/section-divider/section-divider';
@@ -37,6 +37,9 @@ export class WorkSearch {
     required(schemaPath.composer, { message: 'Composer is required' });
 
     required(schemaPath.title, { message: 'Title is required' });
+
+    min(schemaPath.difficulty, 0, { message: 'Min value is 0' });
+    max(schemaPath.difficulty, 10, { message: 'Max value is 10' });
   });
 
   instrumentations = computed(() => {

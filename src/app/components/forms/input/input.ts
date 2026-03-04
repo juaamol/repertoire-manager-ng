@@ -10,7 +10,9 @@ import { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angul
 export class Input implements FormValueControl<string | number> {
   value = model<string | number>('');
   id = input('');
-  type = input<'email' | 'text' | 'password'>('text');
+  type = input<'email' | 'text' | 'password' | 'number'>('text');
+  min = input<number | undefined>(undefined);
+  max = input<number | undefined>(undefined);
   label = input('');
 
   touched = model<boolean>(false);
