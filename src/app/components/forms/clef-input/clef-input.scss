@@ -8,8 +8,8 @@ $input-padding-x: 12px;
   border-left: solid 2px var(--border);
   border-right: solid 2px var(--border);
 
-  &:has(input:focus) .floating-label,
-  &:has(input:not(:placeholder-shown)) .floating-label {
+  &:has(.form-field:focus) .floating-label,
+  &:has(.form-field:not(:placeholder-shown)) .floating-label {
     top: -($pentagram-spacing + $pentagram-line-width);
     font-size: $pentagram-text-size;
     color: var(--border);
@@ -17,7 +17,7 @@ $input-padding-x: 12px;
   }
 }
 
-input {
+.form-field {
   padding: 8px $input-padding-x;
   border: none;
   font-size: 1rem;

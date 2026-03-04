@@ -1,5 +1,8 @@
+<label class="floating-label" [for]="id()">{{ label() }}</label>
+
 <select
   #selectElement
+  class="form-field"
   [id]="id()"
   [value]="value()"
   [class.error]="touched() && invalid()"
@@ -13,3 +16,11 @@
     <option [value]="option">{{ option }}</option>
   }
 </select>
+
+@if (touched() && invalid()) {
+  <ul class="error-messages" role="alert">
+    @for (error of errors().slice(0, 2); track error) {
+      <li class="error">{{ error.message }}</li>
+    }
+  </ul>
+}

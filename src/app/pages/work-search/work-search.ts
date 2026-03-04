@@ -48,7 +48,7 @@ export class WorkSearch {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    const credentials = this.searchModel();
-    console.log(credentials);
+    const search = this.searchModel();
+    console.log(search);
   }
 }
