@@ -1,0 +1,65 @@
+@use 'index' as *;
+
+$input-padding-x: 12px;
+
+.field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+}
+
+.pentagram {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+
+  .pentagram-line {
+    height: $pentagram-line-width;
+    background-color: var(--border);
+  }
+
+  .pentagram-space {
+    height: $pentagram-spacing;
+  }
+}
+
+.double-bar-line {
+  height: calc(($pentagram-spacing + $pentagram-line-width) * 4);
+  display: flex;
+  gap: 4px;
+
+  & > * {
+    background-color: var(--border);
+    width: 4px;
+  }
+
+  & > *:nth-child(2) {
+    width: 8px;
+  }
+}
+
+.clef {
+  $height: calc(($pentagram-spacing + $pentagram-line-width) * 6);
+  $svg-proportion: calc(15.186 / 40.768);
+  height: $height;
+  min-width: calc($height * $svg-proportion);
+
+  .clef-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--border);
+  }
+}
+
+.input-container {
+  position: relative;
+  height: $pentagram-spacing * 2 + $pentagram-line-width;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-left: solid 2px var(--border);
+  border-right: solid 2px var(--border);
+}
