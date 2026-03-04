@@ -1,0 +1,15 @@
+<select
+  #selectElement
+  [id]="id()"
+  [value]="value()"
+  [class.error]="touched() && invalid()"
+  (change)="value.set(selectElement.value)"
+  (blur)="touched.set(true)"
+  placeholder=" "
+>
+  <option value="" disabled selected hidden></option>
+
+  @for (option of options(); track option) {
+    <option [value]="option">{{ option }}</option>
+  }
+</select>

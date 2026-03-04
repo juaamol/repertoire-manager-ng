@@ -5,18 +5,20 @@ import { form, FormField, required } from '@angular/forms/signals';
 import { Book } from '../../components/book/book';
 import { Pentagram } from '../../components/forms/pentagram/pentagram';
 import { SectionDivider } from '../../components/forms/section-divider/section-divider';
+import { SelectDropdown } from '../../components/forms/select-dropdown/select-dropdown';
+import { PieceStatus } from '../../enums/piece-status';
 
 interface WorkSearchForm {
   instrumentation: string;
   composer: string;
   title: string;
   difficulty: number;
-  status: number;
+  status: PieceStatus;
 }
 
 @Component({
   selector: 'app-work-search',
-  imports: [PageTitle, ClefInput, FormField, Book, Pentagram, SectionDivider],
+  imports: [PageTitle, ClefInput, FormField, Book, Pentagram, SectionDivider, SelectDropdown],
   templateUrl: './work-search.html',
   styleUrl: './work-search.scss',
 })
@@ -26,7 +28,7 @@ export class WorkSearch {
     composer: '',
     title: '',
     difficulty: 0,
-    status: 0,
+    status: PieceStatus.PLANNED,
   });
 
   searchForm = form(this.searchModel, (schemaPath) => {
@@ -41,6 +43,8 @@ export class WorkSearch {
     const instrumentation = this.searchForm.instrumentation().value().trim();
     return instrumentation ? [instrumentation] : [];
   });
+
+  pieceStatus = Object.values(PieceStatus);
 
   onSubmit(event: Event) {
     event.preventDefault();

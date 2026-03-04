@@ -21,11 +21,7 @@
           <span class="icon-note">{{ $index < difficulty() ? '&#119135;' : '&#119134;' }}</span>
         }
       </div>
-      <div class="icons-row">
-        @for (_ of range; track $index) {
-          <span class="icon-note">{{ $index < status() ? '&#10711;' : '&#10710;' }}</span>
-        }
-      </div>
+      <span>{{ status() }}</span>
     </div>
   </footer>
 </div>

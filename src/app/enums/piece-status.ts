@@ -1,4 +1,4 @@
-enum Status {
+export enum PieceStatus {
   PLANNED = 'Planned',
   LEARNING = 'Learning',
   REFINING = 'Refining',

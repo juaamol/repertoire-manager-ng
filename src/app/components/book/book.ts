@@ -1,5 +1,6 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { StringToColorPipe } from '../../pipes/string-to-color-pipe';
+import { PieceStatus } from '../../enums/piece-status';
 
 const MAX_DIFFICULTY = 5;
 
@@ -13,7 +14,8 @@ export class Book {
   title = input('Untitled');
   composer = input('Unknown');
   difficulty = input(1);
-  status = input(0);
+  status = input<PieceStatus>(PieceStatus.PLANNED);
+
   classification = input('');
   instrumentations = input<string[]>([]);
 
