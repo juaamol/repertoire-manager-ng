@@ -3,11 +3,37 @@ form {
   margin-right: auto;
   width: 100%;
 
-  .creation {
+  .input {
+    flex: 1;
+  }
+
+  .book {
+    width: 100%;
+    height: auto;
+  }
+
+  .creation-small .book {
+    margin: auto;
+  }
+
+  .creation-medium {
+    display: flex;
+    flex-direction: column;
+
+    .inputs-with-book {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .inputs-besides-book {
+        flex: 1;
+      }
+    }
+  }
+
+  .creation-big {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
     gap: 1rem;
 
     .inputs {
@@ -15,31 +41,15 @@ form {
     }
 
     .book {
-      width: 100%;
+      flex: 0;
     }
-  }
-
-  .input {
-    flex: 1;
   }
 }
 
 @media (min-width: 404px) {
-  form .creation .book {
+  form .book {
     width: auto;
     height: calc(19px * 16);
-  }
-}
-
-@media (min-width: 1024px) {
-  form {
-    .creation {
-      flex-direction: row;
-    }
-
-    .book {
-      flex: 0;
-    }
   }
 }
 

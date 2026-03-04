@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { PageTitle } from '../../components/page-title/page-title';
 import { Input } from '../../components/forms/input/input';
 import { form, FormField, max, min, required } from '@angular/forms/signals';
@@ -7,6 +7,11 @@ import { Pentagram } from '../../components/forms/pentagram/pentagram';
 import { SectionDivider } from '../../components/forms/section-divider/section-divider';
 import { SelectDropdown } from '../../components/forms/select-dropdown/select-dropdown';
 import { PieceStatus } from '../../core/enums/piece-status';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { BREAKPOINTS, MatchingBreakpoints } from '../../core/constants/breakpoints';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { map } from 'rxjs';
+import { NgTemplateOutlet } from '@angular/common';
 
 interface WorkSearchForm {
   instrumentation: string;
@@ -18,11 +23,22 @@ interface WorkSearchForm {
 
 @Component({
   selector: 'app-work-search',
-  imports: [PageTitle, Input, FormField, Book, Pentagram, SectionDivider, SelectDropdown],
+  imports: [
+    PageTitle,
+    Input,
+    FormField,
+    Book,
+    Pentagram,
+    SectionDivider,
+    SelectDropdown,
+    NgTemplateOutlet,
+  ],
   templateUrl: './work-search.html',
   styleUrl: './work-search.scss',
 })
 export class WorkSearch {
+  private breakpointObserver = inject(BreakpointObserver);
+
   searchModel = signal<WorkSearchForm>({
     instrumentation: '',
     composer: '',
@@ -48,6 +64,16 @@ export class WorkSearch {
   });
 
   pieceStatus = Object.values(PieceStatus);
+
+  breakpointChanges: Signal<MatchingBreakpoints> = toSignal(
+    this.breakpointObserver.observe([BREAKPOINTS.medium, BREAKPOINTS.large]).pipe(
+      map(({ breakpoints }) => ({
+        isMedium: breakpoints[BREAKPOINTS.medium],
+        isLarge: breakpoints[BREAKPOINTS.large],
+      })),
+    ),
+    { initialValue: { isMedium: true, isLarge: false } },
+  );
 
   onSubmit(event: Event) {
     event.preventDefault();

@@ -1,59 +1,128 @@
 <app-page-title>Create a new piece</app-page-title>
 
 <form (submit)="onSubmit($event)">
-  <div class="creation">
-    <div class="inputs">
+  @if (breakpointChanges().isMedium) {
+    <div class="creation-medium">
       <app-pentagram>
-        <app-input
-          id="work-search-instrumentation"
-          label="Instrumentation"
-          class="input"
-          [formField]="searchForm.instrumentation"
-        ></app-input>
+        <ng-container *ngTemplateOutlet="instrumentationTpl"></ng-container>
+      </app-pentagram>
+      <app-pentagram>
+        <ng-container *ngTemplateOutlet="composerTpl"></ng-container>
       </app-pentagram>
 
-      <app-pentagram>
-        <app-input
-          id="work-search-composer"
-          label="Composer"
-          class="input"
-          [formField]="searchForm.composer"
-        ></app-input>
-        <app-section-divider></app-section-divider>
-        <app-input
-          id="work-search-work"
-          label="Work"
-          class="input"
-          [formField]="searchForm.title"
-        ></app-input>
-      </app-pentagram>
-
-      <app-pentagram>
-        <app-input
-          id="work-search-difficulty"
-          type="number"
-          label="Difficulty"
-          class="input"
-          [formField]="searchForm.difficulty"
-        ></app-input>
-        <app-section-divider></app-section-divider>
-        <app-select-dropdown
-          id="work-search-status"
-          label="Status"
-          class="input"
-          [formField]="searchForm.status"
-          [options]="pieceStatus"
-        ></app-select-dropdown>
-      </app-pentagram>
+      <div class="inputs-with-book">
+        <div class="inputs-besides-book">
+          <app-pentagram>
+            <ng-container *ngTemplateOutlet="workTpl"></ng-container>
+          </app-pentagram>
+          <app-pentagram>
+            <ng-container *ngTemplateOutlet="difficultyTpl"> </ng-container>
+          </app-pentagram>
+          <app-pentagram>
+            <ng-container *ngTemplateOutlet="statusTpl"></ng-container>
+          </app-pentagram>
+        </div>
+        <ng-container *ngTemplateOutlet="bookTpl"></ng-container>
+      </div>
     </div>
-    <app-book
-      class="book"
-      [title]="searchForm.title().value()"
-      [composer]="searchForm.composer().value()"
-      [instrumentations]="instrumentations()"
-      [difficulty]="searchForm.difficulty().value()"
-      [status]="searchForm.status().value()"
-    ></app-book>
-  </div>
+  } @else if (breakpointChanges().isLarge) {
+    <div class="creation-big">
+      <div class="inputs">
+        <app-pentagram>
+          <ng-container *ngTemplateOutlet="instrumentationTpl"></ng-container>
+        </app-pentagram>
+
+        <app-pentagram>
+          <ng-container *ngTemplateOutlet="composerTpl"></ng-container>
+          <app-section-divider></app-section-divider>
+          <ng-container *ngTemplateOutlet="workTpl"></ng-container>
+        </app-pentagram>
+
+        <app-pentagram>
+          <ng-container *ngTemplateOutlet="difficultyTpl"></ng-container>
+          <app-section-divider></app-section-divider>
+          <ng-container *ngTemplateOutlet="statusTpl"></ng-container>
+        </app-pentagram>
+      </div>
+      <ng-container *ngTemplateOutlet="bookTpl"></ng-container>
+    </div>
+  } @else {
+    <div class="creation-small">
+      <app-pentagram>
+        <ng-container *ngTemplateOutlet="instrumentationTpl"></ng-container>
+      </app-pentagram>
+      <app-pentagram>
+        <ng-container *ngTemplateOutlet="composerTpl"></ng-container>
+      </app-pentagram>
+      <app-pentagram>
+        <ng-container *ngTemplateOutlet="workTpl"></ng-container>
+      </app-pentagram>
+
+      <app-pentagram>
+        <ng-container *ngTemplateOutlet="difficultyTpl"></ng-container>
+        <app-section-divider></app-section-divider>
+        <ng-container *ngTemplateOutlet="statusTpl"></ng-container>
+      </app-pentagram>
+      <ng-container *ngTemplateOutlet="bookTpl"></ng-container>
+    </div>
+  }
   <button>CREATE</button>
 </form>
+
+<ng-template #instrumentationTpl>
+  <app-input
+    id="work-search-instrumentation"
+    label="Instrumentation"
+    class="input"
+    [formField]="searchForm.instrumentation"
+  ></app-input>
+</ng-template>
+
+<ng-template #composerTpl>
+  <app-input
+    id="work-search-composer"
+    label="Composer"
+    class="input"
+    [formField]="searchForm.composer"
+  ></app-input>
+</ng-template>
+
+<ng-template #workTpl>
+  <app-input
+    id="work-search-work"
+    label="Work"
+    class="input"
+    [formField]="searchForm.title"
+  ></app-input>
+</ng-template>
+
+<ng-template #difficultyTpl>
+  <app-input
+    id="work-search-difficulty"
+    type="number"
+    label="Difficulty"
+    class="input"
+    [formField]="searchForm.difficulty"
+  ></app-input>
+</ng-template>
+
+<ng-template #statusTpl>
+  <app-select-dropdown
+    id="work-search-status"
+    label="Status"
+    class="input"
+    [formField]="searchForm.status"
+    [options]="pieceStatus"
+  ></app-select-dropdown>
+</ng-template>
+
+<ng-template #bookTpl>
+  <app-book
+    class="book"
+    [title]="searchForm.title().value()"
+    [composer]="searchForm.composer().value()"
+    [instrumentations]="instrumentations()"
+    [difficulty]="searchForm.difficulty().value()"
+    [status]="searchForm.status().value()"
+  ></app-book>
+</ng-template>
