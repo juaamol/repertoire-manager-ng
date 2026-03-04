@@ -15,12 +15,19 @@ form {
     }
 
     .book {
-      height: calc(19px * 16);
+      width: 100%;
     }
   }
 
   .input {
     flex: 1;
+  }
+}
+
+@media (min-width: 404px) {
+  form .creation .book {
+    width: auto;
+    height: calc(19px * 16);
   }
 }
 
@@ -31,7 +38,6 @@ form {
     }
 
     .book {
-      width: unset;
       flex: 0;
     }
   }
@@ -40,12 +46,6 @@ form {
 @media (min-width: 1024px) {
   form {
     width: 80%;
-  }
-}
-
-@media (min-width: 1200px) {
-  form {
-    width: 70%;
   }
 }
 
