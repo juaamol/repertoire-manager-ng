@@ -1,27 +1,30 @@
 <app-page-title>Create a new piece</app-page-title>
 
 <form (submit)="onSubmit($event)">
-  <div class="creator">
-    <app-clef-input
-      id="work-search-instrumentation"
-      label="Instrumentation"
-      [formField]="searchForm.instrumentation"
-    ></app-clef-input>
-    <app-clef-input
-      id="work-search-composer"
-      label="Composer"
-      [formField]="searchForm.composer"
-    ></app-clef-input>
-    <app-clef-input
-      id="work-search-work"
-      label="Work"
-      [formField]="searchForm.title"
-    ></app-clef-input>
-    <button>CREATE</button>
+  <div class="creation">
+    <div class="inputs">
+      <app-clef-input
+        id="work-search-instrumentation"
+        label="Instrumentation"
+        [formField]="searchForm.instrumentation"
+      ></app-clef-input>
+      <app-clef-input
+        id="work-search-composer"
+        label="Composer"
+        [formField]="searchForm.composer"
+      ></app-clef-input>
+      <app-clef-input
+        id="work-search-work"
+        label="Work"
+        [formField]="searchForm.title"
+      ></app-clef-input>
+    </div>
+    <app-book
+      class="book"
+      [title]="searchForm.title().value()"
+      [composer]="searchForm.composer().value()"
+      [instrumentations]="instrumentations()"
+    ></app-book>
   </div>
-  <!--<app-book
-    [title]="searchForm.title().value()"
-    [composer]="searchForm.composer().value()"
-    [instrumentations]="[searchForm.instrumentation().value()]"
-  ></app-book>-->
+  <button>CREATE</button>
 </form>

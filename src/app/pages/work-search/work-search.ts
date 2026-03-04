@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { PageTitle } from '../../page-title/page-title';
 import { ClefInput } from '../../components/clef-input/clef-input';
 import { form, FormField, required } from '@angular/forms/signals';
@@ -29,6 +29,11 @@ export class WorkSearch {
     required(schemaPath.composer, { message: 'Composer is required' });
 
     required(schemaPath.title, { message: 'Title is required' });
+  });
+
+  instrumentations = computed(() => {
+    const instrumentation = this.searchForm.instrumentation().value().trim();
+    return instrumentation ? [instrumentation] : [];
   });
 
   onSubmit(event: Event) {
