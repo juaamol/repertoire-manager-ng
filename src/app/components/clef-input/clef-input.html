@@ -28,6 +28,7 @@
   </div>
 
   <div class="input-container">
+    <label class="floating-label" [for]="id()">{{ label() }}</label>
     <input
       [id]="id()"
       [type]="type()"
@@ -39,7 +40,6 @@
       placeholder=""
       autocomplete="off"
     />
-    <label class="floating-label" [for]="id()">{{ label() }}</label>
 
     @if (touched() && invalid()) {
       <ul class="error-messages" role="alert">
