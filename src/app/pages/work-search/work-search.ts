@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { PageTitle } from '../../page-title/page-title';
+import { PageTitle } from '../../components/page-title/page-title';
 import { ClefInput } from '../../components/forms/clef-input/clef-input';
 import { form, FormField, required } from '@angular/forms/signals';
 import { Book } from '../../components/book/book';
