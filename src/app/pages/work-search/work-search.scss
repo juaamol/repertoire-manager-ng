@@ -31,7 +31,7 @@ form {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   form {
     .creation {
       flex-direction: row;
@@ -43,9 +43,9 @@ form {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   form {
-    width: 80%;
+    width: 70%;
   }
 }
 
