@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { StringToColorPipe } from '../../pipes/string-to-color-pipe';
-import { PieceStatus } from '../../enums/piece-status';
+import { PieceStatus } from '../../core/enums/piece-status';
 
 const MAX_DIFFICULTY = 5;
 

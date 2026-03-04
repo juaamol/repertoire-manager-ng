@@ -6,7 +6,7 @@ import { Book } from '../../components/book/book';
 import { Pentagram } from '../../components/forms/pentagram/pentagram';
 import { SectionDivider } from '../../components/forms/section-divider/section-divider';
 import { SelectDropdown } from '../../components/forms/select-dropdown/select-dropdown';
-import { PieceStatus } from '../../enums/piece-status';
+import { PieceStatus } from '../../core/enums/piece-status';
 
 interface WorkSearchForm {
   instrumentation: string;
