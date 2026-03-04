@@ -11,7 +11,7 @@
   </main>
   <footer>
     <ul class="instrumentations">
-      @for (instrumentation of instrumentations(); track instrumentation) {
+      @for (instrumentation of instrumentations(); track $index) {
         <li class="instrumentation">{{ instrumentation }}</li>
       }
     </ul>

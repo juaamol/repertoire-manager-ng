@@ -1,0 +1,60 @@
+@use 'index' as *;
+
+$input-padding-x: 12px;
+
+@mixin base-layout {
+  position: relative;
+  width: 100%;
+  border-left: solid 2px var(--border);
+  border-right: solid 2px var(--border);
+
+  &:has(.form-field:focus) .floating-label,
+  &:has(.form-field:not(:placeholder-shown)) .floating-label {
+    top: -($pentagram-spacing + $pentagram-line-width);
+    font-size: $pentagram-text-size;
+    color: var(--border);
+    transform: translateY(0);
+  }
+
+  .form-field {
+    padding: 8px $input-padding-x;
+    border: none;
+    font-size: 1rem;
+    height: $pentagram-spacing * 2 + $pentagram-line-width;
+    width: 100%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .floating-label {
+    position: absolute;
+    left: $input-padding-x;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+    color: var(--text);
+    pointer-events: none;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .error-messages {
+    position: absolute;
+    margin: 0;
+    top: ($pentagram-spacing + $pentagram-line-width) * 2;
+    list-style-type: circle;
+
+    .error {
+      height: $pentagram-spacing + $pentagram-line-width;
+      font-size: $pentagram-text-size;
+      font-style: italic;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: var(--error);
+    }
+  }
+}
