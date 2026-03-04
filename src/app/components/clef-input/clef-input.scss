@@ -1,7 +1,6 @@
-$pentagram-spacing: 17px;
-$pentagram-line-width: 2px;
+@use 'index' as *;
+
 $input-padding-x: 12px;
-$small-text: 0.8rem;
 
 .field {
   display: flex;
@@ -79,7 +78,7 @@ $small-text: 0.8rem;
   &:has(input:focus) .floating-label,
   &:has(input:not(:placeholder-shown)) .floating-label {
     top: -($pentagram-spacing + $pentagram-line-width);
-    font-size: $small-text;
+    font-size: $pentagram-text-size;
     color: var(--border);
     transform: translateY(0);
   }
@@ -106,7 +105,7 @@ $small-text: 0.8rem;
 
     .error {
       height: $pentagram-spacing + $pentagram-line-width;
-      font-size: $small-text;
+      font-size: $pentagram-text-size;
       font-style: italic;
       font-family: sans-serif;
       font-weight: bold;
