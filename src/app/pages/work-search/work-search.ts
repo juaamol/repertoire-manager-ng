@@ -1,7 +1,7 @@
 import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { PageTitle } from '../../components/page-title/page-title';
 import { Input } from '../../components/forms/input/input';
-import { form, FormField, max, min, required } from '@angular/forms/signals';
+import { form, FormField, max, min, required, submit } from '@angular/forms/signals';
 import { Book } from '../../components/book/book';
 import { Pentagram } from '../../components/forms/pentagram/pentagram';
 import { SectionDivider } from '../../components/forms/section-divider/section-divider';
@@ -78,7 +78,9 @@ export class WorkSearch {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    const search = this.searchModel();
-    console.log(search);
+    submit(this.searchForm, async (form) => {
+      console.log(form().value());
+      // await this.creationService.create(value);
+    });
   }
 }

@@ -13,6 +13,7 @@ export class Book {
   title = input('Untitled');
   composer = input('Unknown');
   difficulty = input(1);
+  catalogNumber = input('');
   status = input<PieceStatus>(PieceStatus.PLANNED);
 
   classification = input('');

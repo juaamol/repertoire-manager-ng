@@ -3,7 +3,7 @@
     <div class="composer">{{ composer() }}</div>
     <div>
       <h2 class="title">{{ title() }}</h2>
-      <div class="subtitle">Op. 27, No. 2</div>
+      <div class="subtitle">{{ catalogNumber() }}</div>
     </div>
     @if (classification(); as classification) {
       <p class="classification">"{{ classification }}"</p>
