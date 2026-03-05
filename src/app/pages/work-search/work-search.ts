@@ -12,6 +12,7 @@ import { BREAKPOINTS, MatchingBreakpoints } from '../../core/constants/breakpoin
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 import { NgTemplateOutlet } from '@angular/common';
+import { MAX_DIFFICULTY, MIN_DIFFICULTY } from '../../core/constants/difficulty';
 
 interface WorkSearchForm {
   instrumentation: string;
@@ -54,8 +55,8 @@ export class WorkSearch {
 
     required(schemaPath.title, { message: 'Title is required' });
 
-    min(schemaPath.difficulty, 0, { message: 'Min value is 0' });
-    max(schemaPath.difficulty, 10, { message: 'Max value is 10' });
+    min(schemaPath.difficulty, MIN_DIFFICULTY, { message: `Min value is ${MIN_DIFFICULTY}` });
+    max(schemaPath.difficulty, MAX_DIFFICULTY, { message: `Max value is ${MAX_DIFFICULTY}` });
   });
 
   instrumentations = computed(() => {

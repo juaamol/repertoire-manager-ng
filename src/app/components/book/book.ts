@@ -1,8 +1,7 @@
 import { Component, input } from '@angular/core';
 import { StringToColorPipe } from '../../pipes/string-to-color-pipe';
 import { PieceStatus } from '../../core/enums/piece-status';
-
-const MAX_DIFFICULTY = 5;
+import { MAX_DIFFICULTY } from '../../core/constants/difficulty';
 
 @Component({
   selector: 'app-book',
@@ -20,7 +19,5 @@ export class Book {
   instrumentations = input<string[]>([]);
 
   maxDifficulty = MAX_DIFFICULTY;
-  maxStatus = MAX_DIFFICULTY;
-
   range = new Array(MAX_DIFFICULTY);
 }
