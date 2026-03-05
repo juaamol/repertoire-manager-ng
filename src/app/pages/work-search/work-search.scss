@@ -3,8 +3,18 @@ form {
   margin-right: auto;
   width: 100%;
 
-  .input {
+  .instrumentation,
+  .composer,
+  .work {
     flex: 1;
+  }
+
+  .difficulty {
+    flex: 4;
+  }
+
+  .status {
+    flex: 5;
   }
 
   .book {
@@ -38,6 +48,14 @@ form {
 
     .inputs {
       width: 100%;
+    }
+
+    .composer {
+      flex: 4;
+    }
+
+    .work {
+      flex: 5;
     }
 
     .book {
