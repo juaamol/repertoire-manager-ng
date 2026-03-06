@@ -7,11 +7,12 @@
 </section>
 
 <section class="shelf-container">
-  @for (book of books; track book.title) {
+  @for (book of books; track book.id) {
     <app-book
       [title]="book.title"
       [composer]="book.composer"
       [classification]="book.classification || ''"
+      (click)="goToWork(book.id)"
     ></app-book>
   }
 </section>

@@ -14,6 +14,10 @@ export const routes: Routes = [
     path: 'work-search',
     loadComponent: () => import('./pages/work-search/work-search').then((m) => m.WorkSearch),
   },
+  {
+    path: 'works/:id',
+    loadComponent: () => import('./pages/work-details/work-details').then((m) => m.WorkDetails),
+  },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
